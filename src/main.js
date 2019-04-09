@@ -1,8 +1,21 @@
 // ACCORDION
 
-[...document.querySelectorAll('.acc_head')].map(head => {
-    head.onclick = function(){ this.nextElementSibling.classList.toggle("active"); }
-});
+// --- MY VERSION ---
+
+// let heads = document.querySelectorAll(".acc_head");
+
+// [...heads].map(head => {head.onclick = function()
+// {
+//     this.nextElementSibling.classList.toggle("active");
+// }})
+
+// --- END OF MY VERSION ---
+
+
+
+// [...document.querySelectorAll('.acc_head')].map(head => {
+//     head.onclick = function(){ this.nextElementSibling.classList.toggle("active"); }
+// });
 
 // const heads = document.querySelectorAll('.acc_head');
 // for(let i = 0; i < heads.length; i++)
@@ -12,6 +25,9 @@
 
 // END OF ACCORDION
 
+
+
+
 [...document.querySelectorAll('.left_menu li')].forEach((li, i) => {
     li.onclick = function()
     {
@@ -20,13 +36,14 @@
         //add active to new li
         this.classList.add("active")
 
+
         //remove active from previous info_div
         document.querySelector('.info_div.active').classList.remove("active");
 
         const id = this.getAttribute("data-id");
         const infoDiv = document.querySelector(`.info_div[data-id="${id}"]`);
-        infoDiv.classList.add("active")
-
+    
         //add active to new info_div
+        infoDiv.classList.add("active")
     }
 });
